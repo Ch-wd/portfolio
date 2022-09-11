@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Home</title>
+	<link rel="stylesheet" type="text/css" href="style.css">
+	<meta name="viewport" content="width = device-width, initial-scale = 1, height = device-height">
+	<link rel="preconnect" href="https://fonts.googleapis.com">
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+	<link href="https://fonts.googleapis.com/css2?family=Caveat&display=swap" rel="stylesheet">
+	<link rel="prefetch" href = "puli.jpg">
+	<link rel="prefetch" href = "kaka.jpg">
+	<link rel="prefetch" href = "gorilla.jpg">
+	<link rel="prefetch" href = "image3.jpg">
+
+</head>
+<body>
+	<div class = "container" id="home">
+		<!-- <div class = "inside_container" id="home2"></div> -->
+		<a class = "buttons" onclick="go_in('hornbill','home')">Testimonials</a>
+		<a class = "buttons" onclick="go_in('gorilla','home')">Contact us</a>
+		<a class = "buttons" onclick="go_in('kakamagan','home')">About us</a>
+		<a class = "buttons" onclick="go_in('puli','home')">Founders</a>
+
+	</div>
+	<div class = "container_2" id = "hornbill">
+		<!-- <div class = "inside_container" id="nextpage2"></div> -->
+		<a class = "buttons" onclick="go_out('home','hornbill')">go back home</a>
+	</div>
+	<div class = "container_2" id = "gorilla">
+		<!-- <div class = "inside_container" id="gorilla"></div> -->
+		<a class = "buttons" onclick="go_out('home','gorilla')">go back home</a>
+	</div>
+	<div class = "container_2" id = "kakamagan">
+		<!-- <div class = "inside_container" id="gorilla"></div> -->
+		<a class = "buttons" onclick="go_out('home','kakamagan')">go back home</a>
+	</div>
+
+	<div class = "container_2" id = "puli">
+		<!-- <div class = "inside_container" id="gorilla"></div> -->
+		<a class = "buttons" onclick="go_out('home','puli')">go back home</a>
+	</div>
+</body>
+
+<script type="text/javascript">
+	function go_in(href , obj){
+		var x;
+		console.log("sent by ", obj);
+		console.log("going to ", href);
+		x = document.querySelector("#"+obj);
+		y = document.querySelector('#'+href);
+		// x.style.transform="scale(3)";
+
+		// x.style.translate="-75% 90%";
+		x.classList.add(href);
+		y.style.transform ="scale(1)";	
+		y.style.translate = "0%  0%";
+		// x.style.opacity = 0.5;
+
+		setTimeout(function(){
+			x.style.display = "none";
+		},1000)
+
+		setTimeout(function(){
+			y.style.display = "block";
+			y.style.opacity = 1;
+		},1000)
+
+
+							
+		// x.style.opacity = 0;
+
+	}
+
+	function go_out(href , obj){
+	var x;
+	console.log("sent by ", obj);
+	console.log("going to ", href);
+	x = document.querySelector("#"+obj);
+	y = document.querySelector('#'+href);
+	x.style.transform="scale(3)";
+	// y.style.transform ="scale(1)";
+	x.style.translate="100% 100%";
+	// y.style.translate = "0%  0%";
+	x.style.opacity = 0.5;
+	y.classList.remove(obj);
+	setTimeout(function(){
+		x.style.display = "none";
+	},1000)
+			
+	// x.style.opacity = 0;
+	setTimeout(function(){
+		y.style.display = "block";
+		// y.style.opacity = 1;
+	},1000);
+	}		
+</script>
+</html>
